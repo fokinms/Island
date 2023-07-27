@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="800.0" maxWidth="1250.0" minHeight="800.0" minWidth="1250.0" prefHeight="800.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javarush.fokin.island.islandfx.IslandController">
+   <children>
+      <Pane fx:id="controlPane" maxHeight="150.0" maxWidth="1250.0" minHeight="150.0" minWidth="1250.0" prefHeight="150.0" prefWidth="1250.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="10.0" layoutY="12.0" text="Horizontal dimension of the island :">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="10.0" layoutY="61.0" text="Vertical dimension of the island :">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField layoutX="300.0" layoutY="5.0" prefHeight="25.0" prefWidth="57.0" fx:id="xSizeTF">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <TextField fx:id="ySizeTF" layoutX="300.0" layoutY="55.0" prefHeight="25.0" prefWidth="57.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+            <Button fx:id="createIslandButton" layoutX="10.0" layoutY="101.0" mnemonicParsing="false" onAction="#setGrid" prefHeight="39.0" prefWidth="347.0" text="Create island">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="startIslandButton" disable="true" layoutX="875.0" layoutY="25.0" maxHeight="100.0" maxWidth="150.0" minHeight="100.0" minWidth="150.0" mnemonicParsing="false" onAction="#startEmulation" prefHeight="100.0" prefWidth="150.0" text="Start emulation" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="stopIslandButton" disable="true" layoutX="1075.0" layoutY="25.0" maxHeight="100.0" maxWidth="150.0" minHeight="100.0" minWidth="150.0" mnemonicParsing="false" onAction="#stopEmulation" prefHeight="100.0" prefWidth="150.0" text="Stop emulation" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Label layoutX="414.0" layoutY="12.0" text="Day (tic) of emulation :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="dayOfEmulationLabel" layoutX="610.0" layoutY="12.0" text="N/A">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="380.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="10.0" />
+            <Separator layoutX="850.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="0.0" />
+            <Label layoutX="414.0" layoutY="61.0" text="Number of animals on the island :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="numberOfAnimalsLabel" layoutX="698.0" layoutY="62.0" text="N/A">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="414.0" layoutY="107.0" text="Number of plants on the island :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="numberOfPlantsLabel" layoutX="698.0" layoutY="107.0" text="N/A">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutY="150.0" maxWidth="1250.0" minWidth="1250.0" prefWidth="1250.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="statisticsPane" layoutY="500.0" maxHeight="350.0" maxWidth="1250.0" minHeight="350.0" minWidth="1250.0" prefHeight="350.0" prefWidth="1250.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="450.0">
+         <children>
+            <GridPane layoutX="150.0" layoutY="20.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="cellWolfQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐺 Wolf" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐍 Boa" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐎 Horse" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🦅 Eagle" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐻 Bear" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🦊 Fox" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🦌 Deer" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐇 Rabbit" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐁 Mouse" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐐 Goat" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐑 Sheep" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐗 Boar" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐂 Buffalo" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🦆 Duck" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐛 Caterpillar" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🌿 Grass" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellMouseQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellBoaQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellFoxQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellBearQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellEagleQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellHorseQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellDeerQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellRabbitQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellGoatQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellSheepQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellBoarQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellBuffaloQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellDuckQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellCaterpillarQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="cellGrassQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="392.0" text="The number of creatures in the selected location" underline="true" GridPane.columnSpan="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+               </children>
+            </GridPane>
+            <GridPane layoutX="700.0" layoutY="20.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label fx:id="islandWolfQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐺 Wolf" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐍 Boa" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐎 Horse" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🦅 Eagle" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐻 Bear" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🦊 Fox" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🦌 Deer" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐇 Rabbit" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐁 Mouse" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐐 Goat" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐑 Sheep" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐗 Boar" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐂 Buffalo" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🦆 Duck" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🐛 Caterpillar" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label text="🌿 Grass" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandMouseQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandBoaQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandFoxQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandBearQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandEagleQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandHorseQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandDeerQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandRabbitQuantity" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandGoatQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandSheepQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandBoarQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandBuffaloQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandDuckQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandCaterpillarQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="islandGrassQuantity" text="N/A" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="392.0" text="The number of creatures on the island" underline="true" GridPane.columnSpan="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+               </children>
+            </GridPane>
+            <Separator maxWidth="1250.0" minWidth="1250.0" prefWidth="1250.0" />
+            <Separator layoutY="300.0" maxWidth="1250.0" minWidth="1250.0" prefWidth="1250.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="407.0" layoutY="307.0" text="Time of creation of the island : ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="timeOfCreationLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="658.0" layoutY="307.0" text="N/A" textFill="#2700ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="islandPane" layoutY="150.0" maxHeight="300.0" maxWidth="1250.0" minHeight="300.0" minWidth="1250.0" prefHeight="300.0" prefWidth="1250.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <GridPane fx:id="islandGridPane" hgap="5.0" maxHeight="300.0" maxWidth="1250.0" minHeight="300.0" minWidth="1250.0" prefHeight="300.0" prefWidth="1250.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>   
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,126 @@
+<ENTITY>
+	<BEAR>
+		<weight>500</weight>
+  		<maxcapacity>5</maxcapacity>
+  		<speed>2</speed>
+  		<weighttosaturation>80</weighttosaturation>
+		<offspring>1</offspring>
+	</BEAR>
+
+	<BOA>
+		<weight>15</weight>>
+  		<maxcapacity>30</maxcapacity>
+  		<speed>1</speed>
+  		<weighttosaturation>3</weighttosaturation>
+		<offspring>2</offspring>
+	</BOA>
+
+	<BOAR>
+  		<weight>400</weight>
+  		<maxcapacity>50</maxcapacity>
+  		<speed>2</speed>
+  		<weighttosaturation>50</weighttosaturation>
+		<offspring>3</offspring>
+	</BOAR>
+
+	<BUFFALO>
+ 		<weight>700</weight>
+ 		<maxcapacity>10</maxcapacity>
+ 		<speed>3</speed>
+ 		<weighttosaturation>100</weighttosaturation>
+		<offspring>1</offspring>
+	</BUFFALO>
+
+	<CATERPILLAR>
+  		<weight>0.01</weight>
+  		<maxcapacity>1000</maxcapacity>
+  		<speed>0</speed>
+ 		<weighttosaturation>0</weighttosaturation>
+		<offspring>20</offspring>
+	</CATERPILLAR>
+
+	<DEER>
+  		<weight>300</weight>
+  		<maxcapacity>20</maxcapacity>
+  		<speed>4</speed>
+  		<weighttosaturation>50</weighttosaturation>
+		<offspring>2</offspring>
+	</DEER>
+
+	<DUCK>
+  		<weight>1</weight>
+  		<maxcapacity>200</maxcapacity>
+  		<speed>4</speed>
+  		<weighttosaturation>0.15</weighttosaturation>
+		<offspring>5</offspring>
+	</DUCK>
+
+	<EAGLE>
+  		<weight>6</weight>
+  		<maxcapacity>20</maxcapacity>
+  		<speed>3</speed>
+  		<weighttosaturation>1</weighttosaturation>
+		<offspring>2</offspring>
+	</EAGLE>
+
+	<FOX>
+  		<weight>8</weight>
+  		<maxcapacity>30</maxcapacity>
+  		<speed>2</speed>
+  		<weighttosaturation>2</weighttosaturation>
+		<offspring>2</offspring>
+	</FOX>
+
+	<GOAT>
+  		<weight>60</weight>
+  		<maxcapacity>140</maxcapacity>
+  		<speed>3</speed>
+  		<weighttosaturation>10</weighttosaturation>
+		<offspring>5</offspring>
+	</GOAT>
+
+	<HORSE>
+  		<weight>400</weight>
+  		<maxcapacity>20</maxcapacity>
+  		<speed>4</speed>
+  		<weighttosaturation>60</weighttosaturation>
+		<offspring>2</offspring>
+	</HORSE>
+
+	<MOUSE>
+  		<weight>0.05</weight>
+  		<maxcapacity>500</maxcapacity>
+  		<speed>1</speed>
+  		<weighttosaturation>0.01</weighttosaturation>
+		<offspring>10</offspring>
+	</MOUSE>
+
+	<RABBIT>
+  		<weight>2</weight>
+  		<maxcapacity>150</maxcapacity>
+  		<speed>2</speed>
+  		<weighttosaturation>0.45</weighttosaturation>
+		<offspring>5</offspring>
+	</RABBIT>
+
+	<SHEEP>
+  		<weight>70</weight>
+  		<maxcapacity>140</maxcapacity>
+  		<speed>3</speed>
+  		<weighttosaturation>15</weighttosaturation>
+		<offspring>5</offspring>
+	</SHEEP>
+
+	<WOLF>
+  		<weight>50</weight>
+  		<maxcapacity>30</maxcapacity>
+  		<speed>3</speed>
+  		<weighttosaturation>8</weighttosaturation>
+		<offspring>2</offspring>
+	</WOLF>
+	<GRASS>
+		<weight>1</weight>
+		<maxcapacity>200</maxcapacity>
+		<offspring>5</offspring>
+	</GRASS>
+</ENTITY>
